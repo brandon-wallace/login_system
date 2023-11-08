@@ -1,10 +1,10 @@
 #include <iostream>
 #include <fstream>
 
-// validatePassword checks the spelling of the password
-bool validatePassword(std::string password1, std::string password2)
+// passwordsMatch confirms is spelled correctly
+bool passwordsMatch(std::string password, std::string confirm_password)
 {
-    return password1 == password2;
+    return password == confirm_password;
 }
 
 // userExists checks if a username exists in database
@@ -27,31 +27,31 @@ bool userExists(std::string username)
 void registerNewUser()
 {
     std::string username;
-    std::cout << "Please enter a username: " << '\n';
+    std::cout << " Please enter a username: " << '\n';
     std::cin >> username;
 
     if (userExists(username))
     {
-        std::cout << "Username already exists!" << '\n';
+        std::cout << " Username already exists!" << '\n';
         return;
     }
 
-    std::string password;
-    std::cout << "Please enter a password: " << '\n';
+    std::cout << " Enter your password: ";
+    std::string password{};
     std::cin >> password;
 
-    std::string confirmPassword;
-    std::cout << "Please confirm your password: " << '\n';
+    std::cout << " Confirm your password: ";
+    std::string confirmPassword{};
     std::cin >> confirmPassword;
 
-    if (!validatePassword(password, confirmPassword))
+    if (!passwordsMatch(password, confirmPassword))
     {
-        std::cout << "Passwords do not match." << '\n';
+        std::cout << " Passwords do not match." << '\n';
         return;
     }
 
     std::ofstream file("database.txt", std::ios::app);
     file << username << " " << password << '\n';
 
-    std::cout << "User has been registered successfully." << '\n';
+    std::cout << " User has been registered successfully." << '\n';
 }

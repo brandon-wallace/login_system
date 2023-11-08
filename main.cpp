@@ -8,9 +8,11 @@
 int main() 
 {
     clearScreen();
-    std::cout << "•••••••••••••••••••••••••••••••••••" << '\n';
-    std::cout << "•   LOGIN / REGISTRATION SYSTEM   •" << '\n';
-    std::cout << "•••••••••••••••••••••••••••••••••••" << '\n';
+    std::cout << '\n';
+    std::cout << " •••••••••••••••••••••••••••••••••••" << '\n';
+    std::cout << " •   LOGIN / REGISTRATION SYSTEM   •" << '\n';
+    std::cout << " •••••••••••••••••••••••••••••••••••" << '\n';
+    std::cout << '\n';
     
     int selection{ menu() };
 

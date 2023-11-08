@@ -38,24 +38,24 @@ bool validPassword(std::string password)
 void login()
 {
     std::string username;
-    std::cout << "Please enter a username: " << '\n';
+    std::cout << " Please enter a username: " << '\n';
     std::cin >> username;
 
     if (!findUser(username))
     {
-        std::cout << "Username does not exist!" << '\n';
+        std::cout << " Username does not exist!" << '\n';
         return;
     }
 
     std::string password;
-    std::cout << "Please enter a password: " << '\n';
+    std::cout << " Please enter a password: " << '\n';
     std::cin >> password;
 
     if (!validPassword(password))
     {
-        std::cout << "Password is not correct!" << '\n';
+        std::cout << " Password is not correct!" << '\n';
         return;
     }
 
-    std::cout << "Login successful." << '\n';
+    std::cout << " Login successful." << '\n';
 }

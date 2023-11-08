@@ -26,7 +26,7 @@ bool isNumber(int input)
     return false;
 }
 
-// menu displays an enumerated list of options to select from 
+// menu displays a list of options to select from
 int menu()
 {
     std::cout << " Please select a number (1-3)."
@@ -34,8 +34,8 @@ int menu()
            " \n 2) Register"
            " \n 3) Exit"
            " \n\n Selection: ";
-    int selection{3};
-    std::cin >> selection;
+    int answer{};
+    std::cin >> answer;
 
-    return selection;
+    return answer;
 }
